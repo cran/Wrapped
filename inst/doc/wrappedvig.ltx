@@ -1,0 +1,663 @@
+%\VignetteIndexEntry{R packages: LaTeX vignettes}
+%\VignetteEngine{R.rsp::tex}
+%\VignetteKeyword{R}
+%\VignetteKeyword{package}
+%\VignetteKeyword{vignette}
+%\VignetteKeyword{LaTeX}
+\documentclass[11pt]{article}
+\parskip 1ex
+\pagestyle{plain}
+\oddsidemargin 0in
+\topmargin 0.0in
+\headheight 0in
+\textwidth 6.5in
+\textheight 9.0in
+\usepackage{graphicx,float,epsfig,epstopdf}
+
+\begin{document}
+
+
+
+
+\begin{center}
+{\LARGE\bf Illustration of the {\sf Wrapped} package}
+\\[1ex]
+by
+\\[1ex]
+Saralees Nadarajah and Yuanyuan Zhang
+\\
+School of Mathematics, University of Manchester, Manchester M13 9PL, UK
+\end{center}
+\vspace{1.5cm}
+{\bf Abstract:}~~The six main functions in {\sf Wrapped} are illustrated through various examples.
+
+
+\section{Introduction}
+
+
+Nadarajah and Zhang (2017) developed the  R package {\sf Wrapped}.
+A description of the program structure of the package is given in Section 2 of Nadarajah and Zhang (2017).
+There are six main functions:
+{\sf dwrappedg}, {\sf pwrappedg}, {\sf qwrappedg}, {\sf rwrappedg}, {\sf mwrappedg} and {\sf plotfour}.
+Various numerical illustrations of these functions are given in Sections 2 to 7.
+
+
+
+\section{Illustrations of the use of {\sf dwrappedg}}
+
+
+The first illustration plots the PDF
+of the wrapped beta normal distribution for selected parameter values.
+
+\begin{verbatim}
+x <- -pi+2*pi*seq(0.01,0.99,0.01)
+y <- dwrappedg(x, "betanorm", K = 100, shape1 = 0.1, shape2 = 0.9)
+plot(x, y, xlab = "x", ylab = "PDF", type = "l")
+\end{verbatim}
+
+The plot is
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv1.eps}
+\caption{PDF of the wrapped beta normal distribution.}
+\end{figure}
+
+
+The second illustration plots the PDF
+of the wrapped skew normal distribution for selected parameter values.
+
+\begin{verbatim}
+x <- -pi+2*pi*seq(0.01,0.99,0.01)
+y <- dwrappedg(x, "sn", K = 100, alpha = -2)
+plot(x, y, xlab = "x", ylab = "PDF", type = "l")
+\end{verbatim}
+
+The plot is
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv2.eps}
+\caption{PDF of the wrapped skew normal distribution.}
+\end{figure}
+
+The third illustration plots the PDF
+of the wrapped asymmetric Laplace distribution for selected parameter values.
+
+
+\begin{verbatim}
+x <- -pi+2*pi*seq(0.01,0.99,0.01)
+y <- dwrappedg(x, "asla", K = 100, kappa = 50)
+plot(x, y, xlab = "x", ylab = "PDF", type = "l")
+\end{verbatim}
+
+The plot is
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv3.eps}
+\caption{PDF of the wrapped asymmetric Laplace distribution.}
+\end{figure}
+
+
+The fourth illustration plots the PDF
+of the wrapped skew $t$ type 3 distribution for selected parameter values.
+
+
+\begin{verbatim}
+x <- -pi+2*pi*seq(0.01,0.99,0.01)
+y <- dwrappedg(x, "ST3", K = 100, nu = 50, tau = 50)
+plot(x, y, xlab = "x", ylab = "PDF", type = "l")
+\end{verbatim}
+
+The plot is
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv4.eps}
+\caption{PDF of the wrapped skew $t$ type 3 distribution.}
+\end{figure}
+
+
+\section{Illustrations of the use of {\sf pwrappedg}}
+
+
+The first illustration plots the CDF
+of the wrapped beta normal distribution for selected parameter values.
+
+\begin{verbatim}
+x <- -pi+2*pi*seq(0.01,0.99,0.01)
+y <- pwrappedg(x, "betanorm", K = 100, shape1 = 0.1, shape2 = 0.9)
+plot(x, y, xlab = "x", ylab = "CDF", type = "l")
+\end{verbatim}
+
+The plot is
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv5.eps}
+\caption{CDF of the wrapped beta normal distribution.}
+\end{figure}
+
+
+The second illustration plots the CDF
+of the wrapped skew normal distribution for selected parameter values.
+
+\begin{verbatim}
+x <- -pi+2*pi*seq(0.01,0.99,0.01)
+y <- pwrappedg(x, "sn", K = 100, alpha = -2)
+plot(x, y, xlab = "x", ylab = "CDF", type = "l")
+\end{verbatim}
+
+The plot is
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv6.eps}
+\caption{CDF of the wrapped skew normal distribution.}
+\end{figure}
+
+The third illustration plots the CDF
+of the wrapped asymmetric Laplace distribution for selected parameter values.
+
+
+\begin{verbatim}
+x <- -pi+2*pi*seq(0.01,0.99,0.01)
+y <- pwrappedg(x, "asla", K = 100, kappa = 50)
+plot(x, y, xlab = "x", ylab = "CDF", type = "l")
+\end{verbatim}
+
+The plot is
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv7.eps}
+\caption{CDF of the wrapped asymmetric Laplace distribution.}
+\end{figure}
+
+
+The fourth illustration plots the CDF
+of the wrapped skew $t$ type 3 distribution for selected parameter values.
+
+
+\begin{verbatim}
+x <- -pi+2*pi*seq(0.01,0.99,0.01)
+y <- pwrappedg(x, "ST3", K = 100, nu = 50, tau = 50)
+plot(x, y, xlab = "x", ylab = "CDF", type = "l")
+\end{verbatim}
+
+The plot is
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv8.eps}
+\caption{CDF of the wrapped skew $t$ type 3 distribution.}
+\end{figure}
+
+
+
+\section{Illustrations of the use of {\sf qwrappedg}}
+
+
+The first illustration plots the quantile function
+of the wrapped beta normal distribution for selected parameter values.
+
+\begin{verbatim}
+x <- seq(0.01,0.99,0.01)
+y <- qwrappedg(x, "betanorm", K = 100, shape1 = 0.1, shape2 = 0.9)
+plot(x, y, xlab = "p", ylab = "Quantile function", type = "l")
+\end{verbatim}
+
+The plot is
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv9.eps}
+\caption{Quantile function of the wrapped beta normal distribution.}
+\end{figure}
+
+
+The second illustration plots the quantile function
+of the wrapped skew normal distribution for selected parameter values.
+
+\begin{verbatim}
+x <- seq(0.01,0.99,0.01)
+y <- qwrappedg(x, "sn", K = 100, alpha = -2)
+plot(x, y, xlab = "p", ylab = "Quantile function", type = "l")
+\end{verbatim}
+
+The plot is
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv10.eps}
+\caption{Quantile function of the wrapped skew normal distribution.}
+\end{figure}
+
+The third illustration plots the quantile function
+of the wrapped asymmetric Laplace distribution for selected parameter values.
+
+
+\begin{verbatim}
+x <- seq(0.01,0.99,0.01)
+y <- qwrappedg(x, "asla", K = 100, kappa = 50)
+plot(x, y, xlab = "p", ylab = "Quantile function", type = "l")
+\end{verbatim}
+
+The plot is
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv11.eps}
+\caption{Quantile function of the wrapped asymmetric Laplace distribution.}
+\end{figure}
+
+
+The fourth illustration plots the quantile function
+of the wrapped skew $t$ type 3 distribution for selected parameter values.
+
+
+\begin{verbatim}
+x <- seq(0.01,0.99,0.01)
+y <- qwrappedg(x, "ST3", K = 100, nu = 50, tau = 50)
+plot(x, y, xlab = "p", ylab = "Quantile function", type = "l")
+\end{verbatim}
+
+The plot is
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedv12.eps}
+\caption{Quantile function of the wrapped skew $t$ type 3 distribution.}
+\end{figure}
+
+
+\section{Illustrations of the use of {\sf rwrappedg}}
+
+
+The first illustration generates random numbers from the wrapped beta normal distribution for selected parameter values.
+
+\begin{verbatim}
+y <- rwrappedg(10, "betanorm", shape1 = 0.1, shape2 = 0.9)
+y
+\end{verbatim}
+
+The output is
+
+\begin{verbatim}
+               cc          ss
+ [1,]  0.83946691  0.54341081
+ [2,]  0.39540021  0.91850894
+ [3,]  0.04224134 -0.99910744
+ [4,] -0.72772234 -0.68587185
+ [5,] -0.99644429  0.08425424
+ [6,]  0.65401088 -0.75648514
+ [7,] -0.60078553  0.79941025
+ [8,] -0.48238208 -0.87596092
+ [9,] -0.99733337  0.07298044
+[10,]  0.84894119 -0.52848733
+\end{verbatim}
+
+
+
+The second illustration generates random numbers from the
+wrapped skew normal distribution for selected parameter values.
+
+\begin{verbatim}
+y <- rwrappedg(10, "sn", alpha = -2)
+y
+\end{verbatim}
+
+The output is
+
+\begin{verbatim}
+              cc         ss
+ [1,] -0.4294329 -0.9030988
+ [2,]  0.2692447 -0.9630718
+ [3,]  0.9914533 -0.1304623
+ [4,]  0.4694726 -0.8829471
+ [5,]  0.9759357  0.2180586
+ [6,]  0.4242805 -0.9055308
+ [7,]  0.8751958 -0.4837690
+ [8,] -0.3903690 -0.9206585
+ [9,]  0.8103032 -0.5860108
+[10,]  0.7150983 -0.6990239
+\end{verbatim}
+
+
+
+The third illustration generates random numbers from the
+wrapped asymmetric Laplace distribution for selected parameter values.
+
+
+\begin{verbatim}
+y <- rwrappedg(10, "asla", kappa = 50)
+y
+\end{verbatim}
+
+The output is
+
+\begin{verbatim}
+               cc          ss
+ [1,]  0.16742717  0.98588445
+ [2,]  0.01786582  0.99984039
+ [3,]  0.61352794 -0.78967301
+ [4,]  0.87713424 -0.48024528
+ [5,]  0.88737847 -0.46104169
+ [6,] -0.99789982  0.06477620
+ [7,]  0.14408957 -0.98956465
+ [8,] -0.94946120  0.31388443
+ [9,] -0.80854181  0.58843873
+[10,]  0.99940181 -0.03458343
+\end{verbatim}
+
+
+The fourth illustration generates random numbers from the
+wrapped skew $t$ type 3 distribution for selected parameter values.
+
+
+\begin{verbatim}
+y <- rwrappedg(10, "ST3", nu = 50, tau = 50)
+y
+\end{verbatim}
+
+The output is
+
+
+\begin{verbatim}
+              cc          ss
+ [1,]  0.9291279 -0.36975853
+ [2,]  0.9140545 -0.40559139
+ [3,]  0.8973898 -0.44123855
+ [4,]  0.7227332  0.69112710
+ [5,] -0.9996830 -0.02517933
+ [6,] -0.8283459  0.56021697
+ [7,]  0.3805908 -0.92474357
+ [8,] -0.8576298  0.51426748
+ [9,]  0.5786188 -0.81559815
+[10,]  0.4398901  0.89805162
+\end{verbatim}
+
+
+
+\section{Illustrations of the use of {\sf mwrappedg}}
+
+
+Consider the following data on 30 cross-beds azimuths of palaeocurrents.
+The data on degrees is converted to radii.
+
+
+\begin{verbatim}
+x = c(294, 177, 257, 301, 257, 267, 329, 177, 241, 315,
++ 229, 239, 277, 250, 287, 281, 166, 229, 254, 232,
++ 290, 245, 245, 214, 272, 224, 215, 242, 186, 224)
+x = 2 * pi * x / 360 - pi
+\end{verbatim}
+
+The first illustration is the fit of the wrapped normal distribution to the data.
+
+
+\begin{verbatim}
+mwrappedg("norm", data = x, starts = c(mean(x), 1), K = 100, method = "BFGS")
+\end{verbatim}
+
+The output is
+
+
+\begin{verbatim}
+$Estimates
+           MLE  Std. Dev. Inf. 95% CI Sup. 95% CI
+[1,] 1.1728617 0.12682025   0.9242986    1.421425
+[2,] 0.6946231 0.08967455   0.5188642    0.870382
+
+$Measures
+      AIC     CAIC      BIC    HQIC          W         A Min(-log(Likelihood))
+ 67.27319 67.71764 70.07559 68.1697 0.02754482 0.2095757               31.6366
+
+$`Kolmogorov-Smirnov Test`
+ KS Statistic KS p-value
+   0.08226683  0.9872238
+
+$`Convergence Status`
+
+ "Algorithm Converged"
+\end{verbatim}
+
+The second illustration is the fit of the wrapped logistic distribution to the data.
+
+
+\begin{verbatim}
+mwrappedg("logis", data = x, starts = c(mean(x), 1), K = 100, method = "BFGS")
+\end{verbatim}
+
+The output is
+
+\begin{verbatim}
+$Estimates
+          MLE  Std. Dev. Inf. 95% CI Sup. 95% CI
+[1,] 1.181547 0.12672650   0.9331680   1.4299267
+[2,] 0.398243 0.06068586   0.2793009   0.5171851
+
+$Measures
+      AIC     CAIC      BIC     HQIC          W         A Min(-log(Likelihood))
+ 68.10648 68.55092 70.90887 69.00299 0.02303805 0.1835242              32.05324
+
+$`Kolmogorov-Smirnov Test`
+ KS Statistic KS p-value
+   0.06864052  0.9989203
+
+$`Convergence Status`
+
+ "Algorithm Converged"
+\end{verbatim}
+
+The third illustration is the fit of the wrapped Gumbel distribution to the data.
+
+
+\begin{verbatim}
+mwrappedg("gumbel", data = x, starts = c(mean(x), 1), K = 100, method = "BFGS")
+\end{verbatim}
+
+The output is
+
+\begin{verbatim}
+$Estimates
+           MLE  Std. Dev. Inf. 95% CI Sup. 95% CI
+[1,] 0.8245372 0.13432556   0.5612639   1.0878105
+[2,] 0.6860317 0.09273898   0.5042667   0.8677968
+
+$Measures
+      AIC     CAIC     BIC     HQIC          W        A Min(-log(Likelihood))
+ 71.98751 72.43195 74.7899 72.88402 0.04632486 0.380803              33.99375
+
+$`Kolmogorov-Smirnov Test`
+ KS Statistic KS p-value
+    0.1710141  0.3441205
+
+$`Convergence Status`
+
+ "Algorithm Converged"
+\end{verbatim}
+
+
+The fourth illustration is the fit of the wrapped Laplace distribution to the data.
+
+
+\begin{verbatim}
+mwrappedg("laplace", data = x, starts = c(mean(x), 1), K = 100, method = "BFGS")
+\end{verbatim}
+
+The output is
+
+\begin{verbatim}
+$Estimates
+           MLE  Std. Dev. Inf. 95% CI Sup. 95% CI
+[1,] 1.1344640 0.01651829   1.1020887   1.1668392
+[2,] 0.5456715 0.10041207   0.3488675   0.7424756
+
+$Measures
+      AIC    CAIC      BIC     HQIC          W         A Min(-log(Likelihood))
+ 69.10345 69.5479 71.90585 69.99996 0.02765046 0.2146212              32.55173
+
+$`Kolmogorov-Smirnov Test`
+ KS Statistic KS p-value
+    0.1016237  0.9160182
+
+$`Convergence Status`
+
+ "Algorithm Converged"
+\end{verbatim}
+
+The fifth illustration is the fit of the wrapped Student's $t$ distribution to the data.
+
+
+\begin{verbatim}
+mwrappedg("t.scaled", data = x, starts = c(mean(x), sd(x), 50), K = 100, method = "BFGS")
+\end{verbatim}
+
+The output is
+
+\begin{verbatim}
+$Estimates
+            MLE    Std. Dev.  Inf. 95% CI Sup. 95% CI
+[1,]  1.1740348   0.12720525    0.9247171   1.4233525
+[2,]  0.6864103   0.09429592    0.5015937   0.8712269
+[3,] 67.5447148 224.76746687 -372.9914252 508.0808548
+
+$Measures
+      AIC    CAIC      BIC     HQIC          W         A Min(-log(Likelihood))
+ 69.36032 70.2834 73.56391 70.70509 0.02669693 0.2049471              31.68016
+
+$`Kolmogorov-Smirnov Test`
+ KS Statistic KS p-value
+    0.0808072  0.9895772
+
+$`Convergence Status`
+
+ "Algorithm Converged"
+\end{verbatim}
+
+
+
+For each of the five fitted wrapped distributions, the output gives the
+parameter estimates, standard errors, 95 percent confidence intervals,
+value of Akaike Information Criterion,
+value of Consistent Akaike Information Criterion,
+value of Bayesian Information Criterion,
+value of Hannan Quinn Information Criterion,
+Cramer von Misses statistic value,
+Anderson Darling statistic value,
+minimum value of the negative log likelihood,
+Kolmogorov Smirnov statistic value, its $p$ value
+and convergence status of the minimization of the negative log likelihood.
+
+The standard errors appear smaller compared to the parameter estimates for each fitted distribution.
+An exception is the Student's $t$ wrapped distribution.
+Also the $p$-value for each fitted distribution appears acceptable at the five percent significance level.
+
+The wrapped normal distribution gives the smallest
+values for Cramer von Misses statistic,
+Anderson Darling statistic,
+Akaike Information Criterion,
+Consistent Akaike Information Criterion,
+Bayesian Information Criterion,
+Hannan Quinn information criterion,
+minimum of the negative log-likelihood function.
+But the wrapped logistic distribution gives the smallest
+Kolmogorov Smirnov test statistic and the largest $p$-value.
+
+\section{Illustrations of the use of {\sf plotfour}}
+
+
+The first illustration plots the PDFs
+of the wrapped beta normal distribution for selected parameter values.
+
+
+\begin{verbatim}
+plotfour("betanorm",K=100,para=list(c(0,1,0.1,9),c(0,1,0.1,20),c(0,1,20,0.1),c(0,1,3,3)),
+ plotit="pdf")
+\end{verbatim}
+
+The plots are
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedpdf1.eps}
+\caption{PDFs of the wrapped beta normal distributions for selected parameter values.}
+\end{figure}
+
+The second illustration plots the CDFs
+of the wrapped skew normal distributions for selected parameter values.
+
+
+\begin{verbatim}
+plotfour("sn",K=100,para=list(c(0,1,-2),c(0,1,0),c(0,1,2),c(0,1,10)),
+ plotit="cdf")
+\end{verbatim}
+
+The plots are
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedcdf2.eps}
+\caption{CDFs of the wrapped skew normal distributions for selected parameter values.}
+\end{figure}
+
+The third illustration plots the quantile functions
+of the wrapped asymmetric Laplace distributions for selected parameter values.
+
+
+\begin{verbatim}
+plotfour("asla",K=100,para=list(c(0,1,1),c(0,2,1),c(0,5,1),c(0,50,1)),
+ plotit="quantile")
+\end{verbatim}
+
+The plots are
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=4in]{wrappedquant3.eps}
+\caption{Qunatile functions of the wrapped asymmetric Laplace
+distributions for selected parameter values.}
+\end{figure}
+
+The fourth illustration plots the histograms of the radii of the 100 random numbers generated from
+the  wrapped skew $t$ type 3 distributions for selected parameter values.
+
+
+\begin{verbatim}
+plotfour("ST3",K=100,para=list(c(0,1,1,1),c(0,1,2,5),c(0,1,0.1,5),c(0,1,50,50)),
+ plotit="random")
+\end{verbatim}
+
+The plots are
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=3in,height=3in]{wrappedrandom4.eps}
+\caption{Histograms of 100 random numbers generated from
+the wrapped skew $t$ type 3 distributions for selected parameter values.}
+\end{figure}
+
+
+
+\begin{thebibliography}{999}
+
+\bibitem{}
+Nadarajah, S. and Zhang, S. (2017).
+Wrapped: An R Package for Circular Data.
+Under review for PLOS One.
+
+
+\end{thebibliography}
+
+\end{document}
+
